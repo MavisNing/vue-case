@@ -5,9 +5,15 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/index.css'
 import Http from '@/plugins/http.js'
+import moment from 'moment'
 
 import App from './App'
 import router from './router'
+
+//处理日期格式
+Vue.filter('fmtDate', function (v) {
+  return moment(v).format('YYYY-MM-DD')
+})
 
 Vue.use(Http)
 Vue.use(ElementUI)
